@@ -14,10 +14,11 @@ header.top-bar {
 }
 header.top-bar .container {
   width: 100%;
+  height: 52px;
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  align-items: start;
+  align-items: center;
   justify-content: flex-start;
   box-sizing: border-box;
   padding: 12px;
@@ -30,7 +31,7 @@ header.top-bar .container .left {
 header.top-bar .container .left .blog-title {
   display: flex;
   justify-content: flex-start;
-  margin-top: 4px;
+  /* margin-top: 4px; */
   font-size: 16px;
   font-weight: bolder;
   white-space: pre-line;
@@ -38,6 +39,9 @@ header.top-bar .container .left .blog-title {
   position: relative;
   text-align: left;
   letter-spacing: -0.5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 header.top-bar .container .right {
   width: 30px;
@@ -385,11 +389,114 @@ ul.recent-notice-list li.recent-notice-item > a:hover {
   position: relative;
   margin: 0;
   margin-left: 280px;
-  padding: 0;
+  padding: 40px;
+  box-sizing: border-box;
+  transition: 0.3s all;
 }
 
 #tt-body-page .content-container { 
   margin-right: 360px;
+}
+
+ul.posts-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  align-items: stretch;
+}
+ul.posts-list li {
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  list-style-type: none;
+  box-sizing: border-box;
+}
+ul.posts-list li.posts-index-item {
+  width: calc((100% - (20px * 3)) / 4);
+  height: auto;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+ul.posts-list li.posts-index-item:hover {
+  outline: 2px solid #000;
+}
+ul.posts-list li.posts-index-item:nth-child(4n) {
+  margin-right: 0;
+}
+ul.posts-list li.posts-index-item a.a-wrapper {
+  width: 100%;
+  display: block;
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+}
+ul.posts-list li.posts-index-item .image-row {
+  display: block;
+  height: 180px;
+  position: relative;
+  border-bottom: 1px solid #000;
+  background-image: url('./images/tistory_logo_image.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+ul.posts-list li.posts-index-item .image-row img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  object-fit: cover;
+} 
+ul.posts-list li.posts-index-item .info-row {
+  display: block;
+  margin: 0;
+  padding: 20px;
+  position: relative;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+ul.posts-list li.posts-index-item .info-row .title-row {
+  display: block;
+  margin: 0;
+  margin-bottom: 4px;
+  padding: 0;
+  position: relative;
+  font-size: 16px;
+  font-weight: bold;
+}
+ul.posts-list li.posts-index-item .info-row .time-row {
+  display: block;
+  margin: 0;
+  margin-bottom: 16px;
+  padding: 0;
+  position: relative;
+}
+ul.posts-list li.posts-index-item .info-row .time-row .only-text {
+  font-size: 12px;
+  opacity: 0.4;
+}
+ul.posts-list li.posts-index-item .info-row .description-row {
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-size: 14px;
+}
+
+.index-posts-page-title-row {
+  display: none;
+  position: relative;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 36px;
+}
+#tt-body-index .index-posts-page-title-row {
+  display: block;
 }
 
 /* mobile style */
@@ -421,6 +528,8 @@ ul.recent-notice-list li.recent-notice-item > a:hover {
 
   .content-container {
     margin-left: 0;
+    padding: 20px;
+    padding-top: calc(20px + 52px);
   }
 
   #tt-body-page .content-container { 
@@ -428,3 +537,80 @@ ul.recent-notice-list li.recent-notice-item > a:hover {
   }
 }
 
+.pagination-row {
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.pagination-row .pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+.pagination-row .pagination .aside-button {
+  display: inline-flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+.pagination-row .pagination .aside-button:hover {
+  text-decoration: underline;
+}
+.pagination-row .pagination ul.page-list {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 8px;
+  padding: 0;
+}
+.pagination-row .pagination ul.page-list li {
+  display: inline-flex;
+  background-color: #fff;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.pagination-row .pagination ul.page-list li > a {
+  display: inline-flex;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid #000;
+  box-sizing: border-box;
+}
+.pagination-row .pagination ul.page-list li > a:hover {
+  background-color: #eee;
+}
+.pagination-row .pagination ul.page-list li > a > span {
+  display: inline-flex;
+  padding: 6px 10px;
+  font-size: 14px;
+}
+.pagination-row .pagination ul.page-list li > a > span.selected {
+  background-color: #000;
+  color: #fff;
+}
+
+@media all and (min-width: 0px) and (max-width: 767px) {
+  ul.posts-list li.posts-index-item {
+    width: 100%;
+    margin-right: 0 !important;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1440px) {
+  ul.posts-list li.posts-index-item {
+    width: calc((100% - 20px) / 2);
+  }
+  ul.posts-list li.posts-index-item:nth-child(2n) {
+    margin-right: 0;
+  }
+}

@@ -1,4 +1,5 @@
-import { getContentContainer, getSidebar, getSidebarBackground, getSidebarShowButton, getTopBar } from "./elements";
+import { getContentContainer, getPostsTotalCountText, getSidebar, getSidebarBackground, getSidebarShowButton, getTopBar } from "./elements";
+import { getPostsTotalCount, getTopbarHeight } from "./functions";
 
 console.log('tistory stroke skin javascript loaded!');
 
@@ -8,6 +9,10 @@ window.addEventListener('load', () => {
 });
 
 function int() {
+  const topbarHeight = getTopbarHeight();
+  const contentContainerDefaultPcPadding = 40;
+  const contentContainerDefaultMobilePadding = 20;
+
   const sidebarShowButton = getSidebarShowButton();
   if (sidebarShowButton !== null) {
     sidebarShowButton.addEventListener('click', () => {
@@ -36,20 +41,14 @@ function int() {
     });
   }
 
-  function resized() {
-    const contentContainer = getContentContainer();
-    const topBar = getTopBar();
-    const windowWidth = window.innerWidth;
-    if (windowWidth < 1024) {
-      if (contentContainer !== null) {
-        contentContainer.style.paddingTop = (topBar?.clientHeight ?? 0) + 'px';
-      }
-    } else {
-      if (contentContainer !== null) {
-        contentContainer.style.paddingTop = '0';
-      }
-    }
+  // function resized() {
+    
+  // }
+  // resized();
+  // window.addEventListener('resize', resized);
+
+  const postsTotalCountText = getPostsTotalCountText();
+  if (postsTotalCountText !== null) {
+    postsTotalCountText.textContent = getPostsTotalCount().toString();
   }
-  resized();
-  window.addEventListener('resize', resized);
 }

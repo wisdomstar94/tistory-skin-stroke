@@ -17,3 +17,7 @@ export function getContentContainer() {
 export function getTopBar() {
   return document.querySelector<HTMLElement>('.top-bar');
 }
+
+export function getPostsTotalCountText() {
+  return document.querySelector<HTMLSpanElement>('.posts-total-count-text');
+}
