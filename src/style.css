@@ -10,13 +10,13 @@
   border-right: 1px solid #000;
 }
 .side-bar::-webkit-scrollbar {
-  width: 2px;
+  width: 4px;
 }
 .side-bar::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: #eee;
 }
 .side-bar::-webkit-scrollbar-thumb {
-  background-color: #ddd;
+  background-color: #ccc;
 }
 
 .side-bar .side-bar-content {
@@ -250,3 +250,32 @@ ul.blog-menu-list > li > a {
 ul.blog-menu-list > li > a:hover {
   text-decoration: underline;
 }
+
+ul.recent-notice-list {
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+ul.recent-notice-list li.recent-notice-item {
+  display: block;
+  margin: 0;
+  margin-bottom: 12px;
+  padding: 0;
+  position: relative;
+  list-style-type: none;
+}
+ul.recent-notice-list li.recent-notice-item:last-child {
+  margin-bottom: 0;
+}
+ul.recent-notice-list li.recent-notice-item > a {
+  font-size: 12px;
+  color: inherit;
+  text-decoration: none;
+}
+ul.recent-notice-list li.recent-notice-item > a:hover {
+  text-decoration: underline;
+}
+
+
+
