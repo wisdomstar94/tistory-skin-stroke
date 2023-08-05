@@ -1,3 +1,104 @@
+/* pc style */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+header.top-bar {
+  width: 100%;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+header.top-bar .container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  align-items: start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  padding: 12px;
+  border-bottom: 1px solid #000;
+  background-color: #fff;
+}
+header.top-bar .container .left {
+  width: calc(100% - 46px);
+}
+header.top-bar .container .left .blog-title {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 4px;
+  font-size: 16px;
+  font-weight: bolder;
+  white-space: pre-line;
+  word-break: break-all;
+  position: relative;
+  text-align: left;
+  letter-spacing: -0.5px;
+}
+header.top-bar .container .right {
+  width: 30px;
+  margin-left: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+header.top-bar .container .right button.sidebar-show-button {
+  border: 0;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.sidebar-background {
+  width: 0;
+  height: 0;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 3;
+  overflow: hidden;
+}
+@keyframes sidebar-background-show {
+  0% {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+  1% {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+}
+@keyframes sidebar-background-hide {
+  0% {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+  99% {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+  100% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+}
+
 .side-bar {
   width: 280px;
   height: 100%;
@@ -5,9 +106,11 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 3;
   overflow-y: scroll;
   border-right: 1px solid #000;
+  background-color: #fff;
+  box-sizing: border-box;
 }
 .side-bar::-webkit-scrollbar {
   width: 4px;
@@ -277,5 +380,51 @@ ul.recent-notice-list li.recent-notice-item > a:hover {
   text-decoration: underline;
 }
 
+.content-container {
+  display: block;
+  position: relative;
+  margin: 0;
+  margin-left: 280px;
+  padding: 0;
+}
 
+#tt-body-page .content-container { 
+  margin-right: 360px;
+}
+
+/* mobile style */
+@media all and (min-width: 0px) and (max-width: 1023px) {
+  header.top-bar {
+    display: block;
+  }
+
+  .sidebar-background {
+    display: block;
+    animation-duration: 300ms;
+    animation-fill-mode: both;
+  }
+  .sidebar-background.my-show {
+    animation-name: sidebar-background-show;
+  }
+  .sidebar-background.my-hide {
+    animation-name: sidebar-background-hide;
+  }
+
+  .side-bar {
+    transition: 0.3s all;
+    left: -280px;
+    z-index: 3;
+  }
+  .side-bar.my-show {
+    left: 0;
+  }
+
+  .content-container {
+    margin-left: 0;
+  }
+
+  #tt-body-page .content-container { 
+    margin-right: 0;
+  }
+}
 
