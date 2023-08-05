@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+    <meta property="og:title" content="[##_page_title_##] :: [##_title_##]" />
+    <title>[##_page_title_##] :: [##_title_##]</title>
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body id="[##_body_id_##]">
+    <s_t3>
+      <!-- side bar -->
+      <aside class="side-bar">
+        <nav class="side-bar-content">
+          <s_sidebar>
+            <s_sidebar_element>
+              <!-- 블로그명 -->
+              <div class="blog-title-row">
+                <a href="/" class="common-a">[##_title_##]</a>
+              </div>    
+            </s_sidebar_element>
+            <s_sidebar_element>
+              <!-- 카테고리 -->
+              <div class="sidebar-element-row">
+                <div class="title-row">
+                  <a href="/category" class="common-a">카테고리</a>
+                </div>
+                <div class="content-row">
+                  [##_category_list_##]
+                </div>
+              </div>  
+            </s_sidebar_element>
+            <s_sidebar_element>
+              <!-- 방문자 수 -->
+              <div class="sidebar-element-row">
+                <div class="title-row">
+                  방문자 수
+                </div>
+                <div class="content-row">
+                  <ul class="visiter-count-list">
+                    <li>
+                      <span>전체 :&nbsp;</span>
+                      <span class="count-number">[##_count_total_##]</span>
+                    </li>
+                    <li>
+                      <span>오늘 :&nbsp;</span>
+                      <span class="count-number">[##_count_today_##]</span>
+                    </li>
+                    <li>
+                      <span>어제 :&nbsp;</span>
+                      <span class="count-number">[##_count_yesterday_##]</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>  
+            </s_sidebar_element>
+            <s_sidebar_element>
+              <!-- 최근 댓글 -->
+              <div class="sidebar-element-row">
+                <div class="title-row">
+                  최근 댓글
+                </div>
+                <div class="content-row">
+                  <ul class="recent-comment-list">
+                    <s_rctrp_rep>
+                      <li class="recent-comment-item">
+                        <div class="top-row">
+                          <span class="name">
+                            [##_rctrp_rep_name_##]
+                          </span>
+                          <span class="time">
+                            ([##_rctrp_rep_time_##])
+                          </span>
+                        </div>
+                        <div class="comment-row">
+                          <a href="[##_rctrp_rep_link_##]">[##_rctrp_rep_desc_##]</a>
+                        </div>
+                      </li>
+                    </s_rctrp_rep>
+                  </ul>
+                </div>
+              </div>  
+            </s_sidebar_element>
+          </s_sidebar>
+        </nav>
+      </aside>
+
+      <script src="./images/script.js"></script>
+    </s_t3>
+  </body>
+</html>

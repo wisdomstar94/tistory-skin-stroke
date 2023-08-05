@@ -1,0 +1,43 @@
+{
+  "name": "tistory-skin-stroke",
+  "version": "0.0.1",
+  "description": "tistory 스킨 stroke 개발을 위한 레포지토리 입니다.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tistory",
+    "stroke",
+    "tistory skin",
+    "tistory stroke",
+    "skin stroke",
+    "tistory skin stroke",
+    "skin",
+    "blog",
+    "blog skin",
+    "tistory blog",
+    "blog stroke",
+    "blog stroke skin",
+    "stroke skin",
+    "stroke tistory skin",
+    "storke skin tistory",
+    "티스토리 스킨",
+    "티스토리",
+    "티스토리 stroke",
+    "티스토리 stroke 스킨",
+    "티스토리 스킨 stroke",
+    "블로그",
+    "티스토리 블로그",
+    "티스토리 블로그 스킨",
+    "블로그 스킨",
+    "storke 티스토리",
+    "storke 티스토리 스킨",
+    "storke 스킨 티스토리",
+    "storke skin 티스토리"
+  ],
+  "author": "wisdomstar94@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "esbuild": "^0.18.17"
+  }
+}
