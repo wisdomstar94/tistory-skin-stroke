@@ -1,5 +1,5 @@
-import { getContentContainer, getPostsTotalCountText, getSidebar, getSidebarBackground, getSidebarShowButton, getTopBar } from "./elements";
-import { getPostsTotalCount, getTopbarHeight } from "./functions";
+import { getPostsHeadingTextElementItems, getPostsIndexLiElement, getPostsIndexLiElements, getPostsIndexUlListElement, getPostsTotalCountText, getSidebar, getSidebarBackground, getSidebarShowButton, getTopBar } from "./elements";
+import { getPostsHeadingTextElementsDisplayRange, getPostsTotalCount } from "./functions";
 
 console.log('tistory stroke skin javascript loaded!');
 
@@ -9,10 +9,6 @@ window.addEventListener('load', () => {
 });
 
 function int() {
-  const topbarHeight = getTopbarHeight();
-  const contentContainerDefaultPcPadding = 40;
-  const contentContainerDefaultMobilePadding = 20;
-
   const sidebarShowButton = getSidebarShowButton();
   if (sidebarShowButton !== null) {
     sidebarShowButton.addEventListener('click', () => {
@@ -51,4 +47,60 @@ function int() {
   if (postsTotalCountText !== null) {
     postsTotalCountText.textContent = getPostsTotalCount().toString();
   }
+
+  const postsIndexUlListElement = getPostsIndexUlListElement();
+  if (postsIndexUlListElement !== null) {
+    const postsHeadingTextElementsDisplayRange = getPostsHeadingTextElementsDisplayRange();
+    const postsHeadingTextElementItems = getPostsHeadingTextElementItems();
+    // console.log('@@@ @@@postsHeadingTextElementItems', postsHeadingTextElementItems);
+    for (const item of postsHeadingTextElementItems) {
+      const text = item.element.textContent ?? '';
+
+      const span = document.createElement('span');
+      span.textContent = text;
+
+      const li = document.createElement('li');
+      li.classList.add(item.element.nodeName.toLowerCase());
+      li.appendChild(span);
+
+      li.addEventListener('click', () => {
+        const target = postsHeadingTextElementsDisplayRange.find(x => x.element === item.element);
+        if (target === undefined){
+          return;
+        }
+        window.scrollTo({
+          behavior: 'smooth',
+          top: target.start + 10,
+        });
+      });
+
+      // console.log('@postsIndexUlListElement.appendChild', li);
+      postsIndexUlListElement.appendChild(li);
+    }
+  }
+
+  function postsIndexCheck() {
+    const postsHeadingTextElementsDisplayRange = getPostsHeadingTextElementsDisplayRange();
+    // console.log('@postsHeadingTextElementsDisplayRange', postsHeadingTextElementsDisplayRange);
+    if (postsHeadingTextElementsDisplayRange.length === 0) return;
+
+    const scrollTop = window.scrollY;
+    getPostsIndexLiElements()?.forEach((element) => {
+      element.classList.remove('active');
+    });
+    // console.log('@scrollTop', scrollTop);
+    postsHeadingTextElementsDisplayRange.forEach((item, index) => {
+      // console.log('@item', item);
+      if (scrollTop > item.start && scrollTop <= item.end) {
+        // console.log('matched', item);
+        const postsIndexLi = getPostsIndexLiElement(item.element.textContent, index);
+        postsIndexLi?.classList.add('active');
+      } 
+    });
+  }
+  postsIndexCheck();
+
+  window.addEventListener('scroll', () => {
+    postsIndexCheck();
+  });
 }

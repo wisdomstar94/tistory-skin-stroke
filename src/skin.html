@@ -208,7 +208,21 @@
             <!-- 글 상세페이지에서 보여질 아이템 -->
             <s_permalink_article_rep>
               <li class="posts-permalink-item">
-
+                <div class="title-row">
+                  [##_article_rep_title_##]
+                </div>
+                <div class="time-row">
+                  [##_article_rep_date_year_##]년 [##_article_rep_date_month_##]월 [##_article_rep_date_day_##]일 [##_article_rep_date_hour_##]시 [##_article_rep_date_minute_##]분 [##_article_rep_date_second_##]초에 업로드 된 글입니다.
+                </div>
+                <div class="uploader-row">
+                  작성자: [##_article_rep_author_##]
+                </div>
+                <div class="divide-line"></div>
+                <div class="description-row">
+                  [##_article_rep_desc_##]
+                </div>
+                <div class="divide-line"></div>
+                <!-- <div class="bottom-margin-container"></div> -->
               </li>
             </s_permalink_article_rep>
           </s_article_rep>
@@ -230,6 +244,16 @@
           </s_paging>
         </div>
       </section>
+
+      <!-- 글 상세페이지에서 표시될 목차 영역 -->
+      <aside class="posts-index-container">
+        <div class="title-row">
+          목차
+        </div>
+        <ul class="list-row">
+
+        </ul>
+      </aside>
 
       <script src="./images/script.js"></script>
     </s_t3>

@@ -4,6 +4,10 @@ html, body {
   padding: 0;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 8px;
+}
+
 header.top-bar {
   width: 100%;
   display: none;
@@ -395,7 +399,7 @@ ul.recent-notice-list li.recent-notice-item > a:hover {
 }
 
 #tt-body-page .content-container { 
-  margin-right: 360px;
+  margin-right: 280px;
 }
 
 ul.posts-list {
@@ -488,6 +492,59 @@ ul.posts-list li.posts-index-item .info-row .description-row {
   font-size: 14px;
 }
 
+ul.posts-list li.posts-permalink-item {
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  list-style-type: none;
+}
+ul.posts-list li.posts-permalink-item .title-row {
+  display: block;
+  margin: 0;
+  margin-bottom: 8px;
+  padding: 0;
+  position: relative;
+  font-weight: bold;
+  font-size: 36px;
+}
+ul.posts-list li.posts-permalink-item .time-row {
+  display: block;
+  margin: 0;
+  margin-bottom: 8px;
+  padding: 0;
+  position: relative;
+  font-weight: normal;
+  font-size: 12px;
+}
+ul.posts-list li.posts-permalink-item .uploader-row {
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-weight: normal;
+  font-size: 12px;
+}
+ul.posts-list li.posts-permalink-item .divide-line {
+  display: block;
+  height: 1px;
+  background-color: #000;
+  margin: 40px 0;
+  padding: 0;
+  position: relative;
+}
+ul.posts-list li.posts-permalink-item .description-row {
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+/* ul.posts-list li.posts-permalink-item .bottom-margin-container {
+  width: 100%;
+  display: block;
+  height: 600px;
+} */
+
 .index-posts-page-title-row {
   display: none;
   position: relative;
@@ -497,6 +554,78 @@ ul.posts-list li.posts-index-item .info-row .description-row {
 }
 #tt-body-index .index-posts-page-title-row {
   display: block;
+}
+
+.posts-index-container {
+  width: 280px;
+  height: 100%;
+  display: none;
+  margin: 0;
+  padding: 40px 24px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+  border-left: 1px solid #000;
+  overflow-y: scroll;
+}
+#tt-body-page .posts-index-container {
+  display: block;
+}
+.posts-index-container::-webkit-scrollbar {
+  width: 4px;
+}
+.posts-index-container::-webkit-scrollbar-track {
+  background-color: #eee;
+}
+.posts-index-container::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+.posts-index-container .title-row {
+  display: block;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 32px;
+  position: relative;
+}
+.posts-index-container ul.list-row {
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.posts-index-container ul.list-row > li {
+  display: block;
+  margin: 0;
+  margin-bottom: 12px;
+  padding: 0;
+  position: relative;
+  list-style-type: none;
+  cursor: pointer;
+}
+.posts-index-container ul.list-row > li > span {
+  opacity: 0.3;
+}
+.posts-index-container ul.list-row > li.active > span {
+  opacity: 1;
+}
+.posts-index-container ul.list-row > li.h1 {
+
+}
+.posts-index-container ul.list-row > li.h2 {
+  font-size: 24px;
+}
+.posts-index-container ul.list-row > li.h3 {
+  font-size: 20px;
+}
+.posts-index-container ul.list-row > li.h4 {
+  font-size: 16px;
+}
+.posts-index-container ul.list-row > li.h5 {
+  
+}
+.posts-index-container ul.list-row > li.h6 {
+  
 }
 
 /* mobile style */
@@ -534,6 +663,10 @@ ul.posts-list li.posts-index-item .info-row .description-row {
 
   #tt-body-page .content-container { 
     margin-right: 0;
+  }
+
+  #tt-body-page .posts-index-container {
+    display: none;
   }
 }
 
