@@ -191,3 +191,36 @@ ul.recent-comment-list li.recent-comment-item .comment-row a:hover {
   text-decoration: underline;
 }
 
+.search-form-box {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  position: relative;
+}
+.search-form-box input.search-input {
+  width: calc(100% - 56px);
+  display: flex;
+  padding: 6px 10px;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid #000;
+  border-radius: 0;
+  font-size: 12px;
+}
+.search-form-box input.search-input:focus {
+  outline-style: auto;
+  outline-offset: 1px;
+}
+.search-form-box button.search-submit {
+  width: 52px;
+  margin-left: 4px;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+  font-size: 12px;
+}
