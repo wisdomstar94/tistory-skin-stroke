@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
 /* pc style */
 html, body {
   margin: 0;
   padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -626,6 +629,35 @@ ul.posts-list li.posts-permalink-item .description-row {
 }
 .posts-index-container ul.list-row > li.h6 {
   
+}
+
+.another_category {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+  border: 0 !important;
+}
+.another_category > h4 {
+  color: #000 !important;
+  border: 0 !important;
+}
+.another_category > h4 > a {
+  color: #000 !important;
+  text-decoration: none !important;
+}
+.another_category > table {
+  width: 100% !important;
+}
+.another_category > table > tbody > tr > th {
+  margin: 0 !important;
+  padding: 0 !important;
+  /* border-bottom: 1px solid #aaa; */
+}
+.another_category > table > tbody > tr > td {
+  margin: 0 !important;
+  padding: 0 !important;
+  /* border-bottom: 1px solid #aaa; */
 }
 
 /* mobile style */

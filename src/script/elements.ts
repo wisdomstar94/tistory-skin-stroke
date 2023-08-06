@@ -82,3 +82,7 @@ export function getPostsIndexLiElement(text: string | null, index: number) {
   }
   return null;
 }
+
+export function getAnotherCategoryElement() {
+  return document.querySelector<HTMLDivElement>(`.another_category`);
+}
