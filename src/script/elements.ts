@@ -38,6 +38,9 @@ export function getPostsHeadingTextElementItems(): ICommon.ElementItem[] {
   for (const value of postsBody.children) {
     const child = value as HTMLElement;
     // console.log('@child.nodeName.toLowerCase()', child.nodeName.toLowerCase());
+    if (child.textContent?.trim() === '') {
+      continue;
+    }
     if (['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(child.nodeName.toLowerCase())) {
       elementItems.push({
         element: child,
@@ -81,8 +84,4 @@ export function getPostsIndexLiElement(text: string | null, index: number) {
     }
   }
   return null;
-}
-
-export function getAnotherCategoryElement() {
-  return document.querySelector<HTMLDivElement>(`.another_category`);
 }

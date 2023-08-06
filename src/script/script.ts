@@ -1,4 +1,4 @@
-import { getAnotherCategoryElement, getPostsHeadingTextElementItems, getPostsIndexLiElement, getPostsIndexLiElements, getPostsIndexUlListElement, getPostsTotalCountText, getSidebar, getSidebarBackground, getSidebarShowButton, getTopBar } from "./elements";
+import { getPostsHeadingTextElementItems, getPostsIndexLiElement, getPostsIndexLiElements, getPostsIndexUlListElement, getPostsTotalCountText, getSidebar, getSidebarBackground, getSidebarShowButton, getTopBar } from "./elements";
 import { getPostsHeadingTextElementsDisplayRange, getPostsTotalCount } from "./functions";
 
 console.log('tistory stroke skin javascript loaded!');

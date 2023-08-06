@@ -26,7 +26,7 @@ export function getPostsHeadingTextElementsDisplayRange() {
     const rect = item.element.getBoundingClientRect();
     const start = rect.top + scrollTop;
 
-    const nextElement = elementItems[index + 1]?.element ?? document.querySelector<HTMLElement>('.another_category');
+    const nextElement = elementItems[index + 1]?.element ?? document.querySelector<HTMLElement>('.container_postbtn');
     const nextElementRect = nextElement.getBoundingClientRect();
     const end = nextElementRect.top + scrollTop;
 
