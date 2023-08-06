@@ -535,6 +535,9 @@ ul.posts-list li.posts-permalink-item .tag-row > a {
   margin-bottom: 8px;
   padding: 4px 12px;
 }
+ul.posts-list li.posts-permalink-item .tag-row > a::before {
+  content: '#';
+}
 ul.posts-list li.posts-permalink-item .time-row {
   display: block;
   margin: 0;
@@ -571,6 +574,146 @@ ul.posts-list li.posts-permalink-item .description-row {
   display: block;
   height: 600px;
 } */
+ul.posts-list li.posts-permalink-item .comment-row {
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+ol.comment-list {
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+ol.comment-list li.comment-item {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: block;
+}
+ol.comment-list li.comment-item .container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  padding: 16px;
+  border-bottom: 1px solid #000;
+}
+ol.comment-list.sub li.comment-item .container {
+  border-bottom: 1px solid #aaa;
+}
+ol.comment-list li.comment-item .container .icon-area {
+  display: none;
+}
+ol.comment-list li.comment-item .container .icon-area svg {
+  stroke: #aaa;
+}
+ol.comment-list.sub li.comment-item .container .icon-area {
+  width: 46px;
+  margin-right: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-end;
+  position: relative;
+}
+ol.comment-list li.comment-item .container .left-area {
+  width: 170px;
+  box-sizing: border-box;
+  border-right: 1px solid #eee;
+}
+ol.comment-list li.comment-item .container .left-area .profile-area {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+ol.comment-list li.comment-item .container .left-area .profile-area .image-area {
+  width: 46px;
+  height: 46px;
+  margin-right: 8px;
+  display: block;
+}
+ol.comment-list li.comment-item .container .left-area .profile-area .image-area img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 200px;
+  overflow: hidden;
+}
+ol.comment-list li.comment-item .container .left-area .profile-area .text-area {
+  width: calc(100% - 54px);
+  display: block;
+}
+ol.comment-list li.comment-item .container .left-area .profile-area .text-area .name {
+  display: block;
+  font-size: 12px;
+  color: #000;
+  margin-bottom: 4px;
+}
+ol.comment-list li.comment-item .container .left-area .profile-area .text-area .time {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 4px;
+}
+ol.comment-list li.comment-item .container .left-area .profile-area .text-area .time > a {
+  display: block;
+  color: #888;
+  text-decoration: none;
+}
+ol.comment-list li.comment-item .container .left-area .profile-area .text-area .time > a:hover {
+  text-decoration: underline;
+}
+ol.comment-list li.comment-item .container .left-area .profile-area .text-area .time > a::before {
+  content: '[';
+}
+ol.comment-list li.comment-item .container .left-area .profile-area .text-area .time > a::after {
+  content: ']';
+}
+ol.comment-list li.comment-item .container .right-area {
+  width: calc(100% - 170px);
+  box-sizing: border-box;
+  font-size: 12px;
+  box-sizing: border-box;
+  padding-left: 12px;
+  display: block;
+}
+ol.comment-list.sub li.comment-item .container .right-area {
+  width: calc(100% - (170px + 54px));
+}
+ol.comment-list li.comment-item .container .right-area .other-button-row {
+  display: block;
+  margin-top: 4px;
+}
+ol.comment-list li.comment-item .container .right-area .other-button-row a.other-button {
+  display: inline-block;
+  margin-right: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+}
+ol.comment-list li.comment-item .container .right-area .other-button-row a.other-button:hover {
+  text-decoration: underline;
+}
+
+.section-title-row {
+  display: block;
+  margin: 0;
+  margin-bottom: 28px;
+  padding: 0;
+  position: relative;
+  font-size: 20px;
+  font-weight: bold;
+}
 
 .index-posts-page-title-row {
   display: none;
@@ -723,6 +866,46 @@ ul.posts-list li.posts-permalink-item .description-row {
 
   #tt-body-page .posts-index-container {
     display: none;
+  }
+}
+
+@media all and (min-width: 0px) and (max-width: 768px) {
+  ol.comment-list li.comment-item .container .left-area {
+    width: 100%;
+    border-right: 0;
+    margin-bottom: 4px;
+  }
+  ol.comment-list.sub li.comment-item .container .left-area {
+    width: calc(100% - 56px);
+  }
+
+  ol.comment-list li.comment-item .container .right-area {
+    width: 100%;
+    padding-left: 0;
+  }
+  ol.comment-list.sub li.comment-item .container .right-area {
+    width: calc(100% - 56px);
+    padding-left: 54px;
+  }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1279px) {
+  ol.comment-list li.comment-item .container .left-area {
+    width: 100%;
+    border-right: 0;
+    margin-bottom: 4px;
+  }
+  ol.comment-list.sub li.comment-item .container .left-area {
+    width: calc(100% - 56px);
+  }
+
+  ol.comment-list li.comment-item .container .right-area {
+    width: 100%;
+    padding-left: 0;
+  }
+  ol.comment-list.sub li.comment-item .container .right-area {
+    width: calc(100% - 56px);
+    padding-left: 54px;
   }
 }
 

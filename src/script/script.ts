@@ -50,7 +50,6 @@ function int() {
 
   const postsIndexUlListElement = getPostsIndexUlListElement();
   if (postsIndexUlListElement !== null) {
-    const postsHeadingTextElementsDisplayRange = getPostsHeadingTextElementsDisplayRange();
     const postsHeadingTextElementItems = getPostsHeadingTextElementItems();
     // console.log('@@@ @@@postsHeadingTextElementItems', postsHeadingTextElementItems);
     for (const item of postsHeadingTextElementItems) {
@@ -64,6 +63,7 @@ function int() {
       li.appendChild(span);
 
       li.addEventListener('click', () => {
+        const postsHeadingTextElementsDisplayRange = getPostsHeadingTextElementsDisplayRange();
         const target = postsHeadingTextElementsDisplayRange.find(x => x.element === item.element);
         if (target === undefined){
           return;
