@@ -547,6 +547,69 @@
               </li>
             </s_permalink_article_rep>
           </s_notice_rep>
+
+          <!-- 보호글 -->
+          <s_article_protected>
+            <s_index_article_rep>
+              <li class="posts-index-item secret">
+                <a href="[##_article_rep_link_##]" class="a-wrapper">
+                  <div class="image-row">
+                    
+                  </div>
+                  <div class="info-row">
+                    <div class="title-row">
+                      보호글 입니다.
+                    </div>
+                    <div class="time-row">
+                      <span class="only-text">
+                        [##_article_rep_date_year_##]-[##_article_rep_date_month_##]-[##_article_rep_date_day_##]&nbsp;[##_article_rep_date_hour_##]:[##_article_rep_date_minute_##]:[##_article_rep_date_second_##]
+                      </span>
+                    </div>
+                    <div class="description-row">
+                      보호되어 있는 글입니다.
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </s_index_article_rep>
+            <s_permalink_article_rep>
+              <li class="posts-permalink-item">
+                <div class="title-row">
+                  보호글 입니다.
+                </div>
+                <div class="time-row">
+                  [##_article_rep_date_year_##]년 [##_article_rep_date_month_##]월 [##_article_rep_date_day_##]일 [##_article_rep_date_hour_##]시 [##_article_rep_date_minute_##]분 [##_article_rep_date_second_##]초에 업로드 된 글입니다.
+                </div>
+                <div class="uploader-row">
+                  작성자: [##_article_rep_author_##]
+                </div>
+                <div class="divide-line"></div>
+                <div class="description-row">
+                  <div class="secret-article-form-container">
+                    <div class="description-text">
+                      보호되어 있는 글입니다. 내용을 보시려면 비밀번호를 입력하세요.
+                    </div>
+                    <div class="password-input-form">
+                      <ul class="comment-write-form-list">
+                        <li class="form-item">
+                          <div class="title-row">
+                            <label for="[##_article_password_##]">비밀번호</label>
+                          </div>
+                          <div class="content-row">
+                            <input type="password" class="default-input w-full" id="[##_article_password_##]" name="[##_article_password_##]" value="" onkeydown="if (event.keyCode == 13)[##_article_dissolve_##]" />
+                          </div>
+                        </li>
+                        <li class="form-item w-full">
+                          <button class="default-button" type="submit" onclick="[##_article_dissolve_##]">확인</button>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="divide-line"></div>
+              </li>
+            </s_permalink_article_rep>
+          </s_article_protected>
         </ul>
 
         <!-- 밤명록 -->
