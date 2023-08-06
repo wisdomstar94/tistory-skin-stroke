@@ -52,31 +52,43 @@ function int() {
   if (postsIndexUlListElement !== null) {
     const postsHeadingTextElementItems = getPostsHeadingTextElementItems();
     // console.log('@@@ @@@postsHeadingTextElementItems', postsHeadingTextElementItems);
-    for (const item of postsHeadingTextElementItems) {
-      const text = item.element.textContent ?? '';
 
+    if (postsHeadingTextElementItems.length > 0) {
+      for (const item of postsHeadingTextElementItems) {
+        const text = item.element.textContent ?? '';
+  
+        const span = document.createElement('span');
+        span.textContent = text;
+  
+        const li = document.createElement('li');
+        li.classList.add(item.element.nodeName.toLowerCase());
+        li.appendChild(span);
+  
+        li.addEventListener('click', () => {
+          const postsHeadingTextElementsDisplayRange = getPostsHeadingTextElementsDisplayRange();
+          const target = postsHeadingTextElementsDisplayRange.find(x => x.element === item.element);
+          if (target === undefined){
+            return;
+          }
+          window.scrollTo({
+            behavior: 'smooth',
+            top: target.start + 30,
+          });
+        });
+  
+        // console.log('@postsIndexUlListElement.appendChild', li);
+        postsIndexUlListElement.appendChild(li);
+      }
+    } else {
       const span = document.createElement('span');
-      span.textContent = text;
+      span.textContent = '표시할 목차가 없습니다.';
 
       const li = document.createElement('li');
-      li.classList.add(item.element.nodeName.toLowerCase());
+      li.classList.add('h4');
       li.appendChild(span);
 
-      li.addEventListener('click', () => {
-        const postsHeadingTextElementsDisplayRange = getPostsHeadingTextElementsDisplayRange();
-        const target = postsHeadingTextElementsDisplayRange.find(x => x.element === item.element);
-        if (target === undefined){
-          return;
-        }
-        window.scrollTo({
-          behavior: 'smooth',
-          top: target.start + 30,
-        });
-      });
-
-      // console.log('@postsIndexUlListElement.appendChild', li);
       postsIndexUlListElement.appendChild(li);
-    }
+    } 
   }
 
   function postsIndexCheck() {

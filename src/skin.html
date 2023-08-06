@@ -170,78 +170,124 @@
         </nav>
       </aside>
 
+      <script>
+        function getPostsTotalCountText() {
+          const target = document.querySelector('.sidebar-element-row a.link_tit span.c_cnt');
+          if (target === null) {
+            return 0;
+          }
+          const text = target.textContent;
+          if (text === null) {
+            return 0;
+          }
+          return text;
+        }
+
+        function getCategoryCntText() {
+          const pathnameSplit = location.pathname.split('/');
+          const categoryName = decodeURIComponent(pathnameSplit[pathnameSplit.length - 1]).trim();
+
+          const linkItemAElements = document.querySelectorAll('ul.category_list a.link_item');
+          const linkItemASubElements = document.querySelectorAll('ul.category_list a.link_sub_item');
+          
+          const linkElements = [];
+          linkItemAElements.forEach((element) => {
+            linkElements.push(element);
+          });
+          linkItemASubElements.forEach((element) => {
+            linkElements.push(element);
+          });
+
+          let targetElement = null;
+
+          for (const element of linkElements) {
+            const childNodes = element.childNodes;
+            const firstNode = childNodes[0];
+            const data = firstNode.data;
+            if (typeof data !== 'string') {
+              continue;
+            }
+            if (data.trim() === categoryName) {
+              targetElement = element;
+              break;
+            }
+          }
+
+          if (targetElement === null) {
+            return;
+          }
+
+          const c_cnt_element = targetElement.querySelector('span.c_cnt');
+          if (c_cnt_element === null) {
+            return;
+          }
+
+          const cntText = c_cnt_element.textContent;
+          if (typeof cntText !== 'string') {
+            return;
+          }
+
+          return cntText;
+        }
+      </script>
+
       <!-- content container -->
       <section class="content-container">
         <!-- 인덱스 페이지 또는 글 상세 페이지에서 보여질 내용 -->
         <div class="index-posts-page-title-row">
-          전체 글 <span class="posts-total-count-text">&nbsp;&nbsp;</span>
+          <script>
+            if (location.pathname.startsWith('/notice')) {
+              document.write('전체 공지사항 글');
+            } else {
+              document.write('전체 글');
+            }
+          </script>
+          <span class="posts-total-count-text">
+            <script>
+              if (!location.pathname.startsWith('/notice')) {
+                const countText = getPostsTotalCountText();
+                if (typeof countText === 'string') {
+                  document.write(countText);
+                }
+              }
+            </script>
+          </span>
         </div>
 
         <!-- 특정 카테고리 글 목록 페이지에서 보여질 타이틀 -->
         <div class="category-index-posts-page-title-row">
           <script>
-            if (location.pathname.startsWith('/category')) {
+            if (location.pathname === '/category') {
+              document.write('전체 글');
+            } else if (location.pathname.startsWith('/category')) {
               const pathnameSplit = location.pathname.split('/');
               document.write(decodeURIComponent(pathnameSplit[pathnameSplit.length - 1]));
-            }
+            } 
           </script>
           <script>
             // window.addEventListener('load', function() {
-            function getCntText() {
-              const pathnameSplit = location.pathname.split('/');
-              const categoryName = decodeURIComponent(pathnameSplit[pathnameSplit.length - 1]).trim();
-
-              const linkItemAElements = document.querySelectorAll('ul.category_list a.link_item');
-              const linkItemASubElements = document.querySelectorAll('ul.category_list a.link_sub_item');
-              
-              const linkElements = [];
-              linkItemAElements.forEach((element) => {
-                linkElements.push(element);
-              });
-              linkItemASubElements.forEach((element) => {
-                linkElements.push(element);
-              });
-
-              let targetElement = null;
-
-              for (const element of linkElements) {
-                const childNodes = element.childNodes;
-                const firstNode = childNodes[0];
-                const data = firstNode.data;
-                if (typeof data !== 'string') {
-                  continue;
-                }
-                if (data.trim() === categoryName) {
-                  targetElement = element;
-                  break;
-                }
+            if (location.pathname === '/category') {
+              const countText = getPostsTotalCountText();
+              if (typeof countText === 'string') {
+                document.write(countText);
               }
-
-              if (targetElement === null) {
-                return;
+            } else if (location.pathname.startsWith('/category')) {
+              const cntText = getCategoryCntText();
+              if (typeof cntText === 'string') {
+                document.write(cntText);
               }
-
-              const c_cnt_element = targetElement.querySelector('span.c_cnt');
-              if (c_cnt_element === null) {
-                return;
-              }
-
-              const cntText = c_cnt_element.textContent;
-              if (typeof cntText !== 'string') {
-                return;
-              }
-
-              return cntText;
-            }
-
-            const cntText = getCntText();
-            if (typeof cntText === 'string') {
-              document.write(cntText);
             }
             // });
           </script>
         </div>
 
+        <!-- 방명록 페이지에서 보여질 타이틀 -->
+        <div class="guestbook-page-title-row">
+          방명록
+        </div>
+
+
+        <!-- 글 목록(또는 단일 아이템) -->
         <ul class="posts-list">
           <!-- 일반 포스트 -->
           <s_article_rep>
@@ -488,6 +534,112 @@
             </s_permalink_article_rep>
           </s_notice_rep>
         </ul>
+
+        <!-- 밤명록 -->
+        <div class="guestbook-container">
+          <s_guest>
+            <s_guest_container>
+              <ol class="comment-list">
+                <s_guest_rep>
+                  <li class="comment-item" id="[##_guest_rep_id_##]">
+                    <div class="container">
+                      <div class="left-area">
+                        <div class="profile-area">
+                          <div class="image-area">
+                            <img src="[##_guest_rep_logo_##]" alt="프로필 이미지" title="프로필 이미지" />
+                          </div>
+                          <div class="text-area">
+                            <div class="name">[##_guest_rep_name_##]</div>
+                            <div class="time">[##_guest_rep_date_##]</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="right-area">
+                        <div>[##_guest_rep_desc_##]</div>
+                        <div class="other-button-row">
+                          <a href="#" class="other-button" onclick="[##_guest_rep_onclick_reply_##]">[답글]</a>
+                          <a href="#" class="other-button" onclick="[##_guest_rep_onclick_delete_##]">[수정/삭제]</a>
+                        </div>
+                      </div>
+                    </div>
+                    <s_guest_reply_container>
+                      <ol class="comment-list sub">
+                        <s_guest_reply_rep>
+                          <li class="comment-item" id="[##_guest_rep_id_##]">
+                            <div class="container">
+                              <div class="icon-area">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-forward" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                  <path d="M15 11l4 4l-4 4m4 -4h-11a4 4 0 0 1 0 -8h1" />
+                                </svg>                                        
+                              </div>
+                              <div class="left-area">
+                                <div class="profile-area">
+                                  <div class="image-area">
+                                    <img src="[##_guest_rep_logo_##]" alt="프로필 이미지" title="프로필 이미지" />
+                                  </div>
+                                  <div class="text-area">
+                                    <div class="name">[##_guest_rep_name_##]</div>
+                                    <div class="time">[##_guest_rep_date_##]</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="right-area">
+                                <div>[##_guest_rep_desc_##]</div>
+                                <div class="other-button-row">
+                                  <a href="#" class="other-button" onclick="[##_guest_rep_onclick_reply_##]">[답글]</a>
+                                  <a href="#" class="other-button" onclick="[##_guest_rep_onclick_delete_##]">[수정/삭제]</a>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </s_guest_reply_rep>
+                      </ol>
+                    </s_guest_reply_container> 
+                  </li>
+                </s_guest_rep>
+              </ol>
+            </s_guest_container>
+            <s_guest_input_form>
+              <ul class="comment-write-form-list">
+                <!-- s_guest_form -->
+                <s_guest_form>
+                  <li class="form-item">
+                    <div class="title-row">
+                      <label for="[##_guest_input_name_##]">이름</label>
+                    </div>
+                    <div class="content-row">
+                      <input type="text" class="default-input w-full" id="[##_guest_input_name_##]" name="[##_guest_input_name_##]" value="[##_guest_name_##]" />
+                    </div>
+                  </li>
+                  <li class="form-item">
+                    <div class="title-row">
+                      <label for="[##_guest_input_password_##]">비밀번호</label>
+                    </div>
+                    <div class="content-row">
+                      <input type="password" class="default-input w-full" id="[##_guest_input_password_##]" name="[##_guest_input_password_##]" value="[##_guest_password_##]" />
+                    </div>
+                  </li>
+                </s_guest_form>
+                <!-- s_guest_member -->
+                <s_guest_member>
+                  <!-- ... -->
+                </s_guest_member>
+                <li class="form-item w-full">
+                  <div class="title-row">
+                    <label for="[##_guest_input_comment_##]">내용</label>
+                  </div>
+                  <div class="content-row">
+                    <textarea id="[##_guest_input_comment_##]" class="default-textarea w-full" name="[##_guest_input_comment_##]"></textarea>
+                  </div>
+                </li>
+                <li class="form-item w-full">
+                  <button class="default-button" type="submit" onclick="[##_guest_onclick_submit_##]">방명록 작성하기</button>
+                </li>
+              </ul>
+            </s_guest_input_form>
+          </s_guest>
+        </div>
 
         <div class="pagination-row">
           <s_paging>
