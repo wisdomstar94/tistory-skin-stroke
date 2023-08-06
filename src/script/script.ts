@@ -44,8 +44,8 @@ function int() {
   // window.addEventListener('resize', resized);
 
   const postsTotalCountText = getPostsTotalCountText();
-  if (postsTotalCountText !== null) {
-    postsTotalCountText.textContent = getPostsTotalCount().toString();
+  if (postsTotalCountText !== null && !location.pathname.startsWith('/notice')) {
+    postsTotalCountText.textContent = '(' + getPostsTotalCount().toString() + ')';
   }
 
   const postsIndexUlListElement = getPostsIndexUlListElement();
