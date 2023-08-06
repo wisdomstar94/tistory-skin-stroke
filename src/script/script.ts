@@ -70,7 +70,7 @@ function int() {
         }
         window.scrollTo({
           behavior: 'smooth',
-          top: target.start + 10,
+          top: target.start + 30,
         });
       });
 
