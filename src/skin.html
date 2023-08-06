@@ -294,6 +294,74 @@
                         </s_rp_rep>
                       </ol>
                     </s_rp_container>
+                    <s_rp_input_form>
+                      <ul class="comment-write-form-list">
+                        <!-- s_rp_guest -->
+                        <s_rp_guest>
+                          <li class="form-item">
+                            <div class="title-row">
+                              <label for="[##_rp_input_name_##]">이름</label>
+                            </div>
+                            <div class="content-row">
+                              <input type="text" class="default-input w-full" id="[##_rp_input_name_##]" name="[##_rp_input_name_##]" value="[##_guest_name_##]" />
+                            </div>
+                          </li>
+                          <li class="form-item">
+                            <div class="title-row">
+                              <label for="[##_rp_input_password_##]">비밀번호</label>
+                            </div>
+                            <div class="content-row">
+                              <input type="password" class="default-input w-full" id="[##_rp_input_password_##]" name="[##_rp_input_password_##]" value="[##_rp_admin_check_##]" />
+                            </div>
+                          </li>
+                        </s_rp_guest>
+                        <!-- s_rp_member -->
+                        <s_rp_member>
+                          <li class="form-item">
+                            <div class="title-row">
+                              <label for="">비밀글</label>
+                            </div>
+                            <div class="content-row">
+                              <input type="checkbox" style="width: 0; height: 0; overflow: hidden; opacity: 0; margin: 0; padding: 0; position: absolute;" id="[##_rp_input_is_secret_##]" name="[##_rp_input_is_secret_##]" class="checkbox" />
+                              <div class="custom-switch-button" onclick="(function(thisObj) {
+                                const target = document.querySelector('#[##_rp_input_is_secret_##]');
+                                if (target === null) {
+                                  return;
+                                }
+                                if (target.checked) {
+                                  thisObj.classList.remove('active');
+                                  target.checked = false;
+                                } else {
+                                  thisObj.classList.add('active');
+                                  target.checked = true;
+                                }
+                              })(this)">
+                                <div class="on-text-area">
+                                  ON
+                                </div>
+                                <div class="off-text-area">
+                                  OFF
+                                </div>
+                                <div class="handler">
+
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </s_rp_member>
+                        <li class="form-item w-full">
+                          <div class="title-row">
+                            <label for="[##_rp_input_comment_##]">내용</label>
+                          </div>
+                          <div class="content-row">
+                            <textarea id="[##_rp_input_comment_##]" class="default-textarea w-full" name="[##_rp_input_comment_##]"></textarea>
+                          </div>
+                        </li>
+                        <li class="form-item w-full">
+                          <button class="default-button" type="submit" onclick="[##_rp_onclick_submit_##]">댓글 작성하기</button>
+                        </li>
+                      </ul>
+                    </s_rp_input_form>
                   </s_rp>
                 </div>
               </li>
