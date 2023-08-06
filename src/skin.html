@@ -286,6 +286,20 @@
           방명록
         </div>
 
+        <!-- 태그 페이지에서 보여질 타이틀 -->
+        <div class="tag-page-title-row">
+          <script>
+            if (location.pathname === '/tag') {
+              document.write('태그');
+            } else if (location.pathname.startsWith('/tag')) {
+              const pathnameSplit = location.pathname.split('/');
+              const lastItem = pathnameSplit[pathnameSplit.length - 1];
+              const tag = decodeURIComponent(lastItem).trim();
+              document.write('#' + tag);
+            }
+          </script>
+        </div>
+
 
         <!-- 글 목록(또는 단일 아이템) -->
         <ul class="posts-list">
@@ -640,6 +654,15 @@
             </s_guest_input_form>
           </s_guest>
         </div>
+
+        <!-- 태그 목록 -->
+        <s_tag>
+          <div class="tag-row">
+            <s_tag_rep>
+              <a href="[##_tag_link_##]" rel="tag">[##_tag_name_##]</a>
+            </s_tag_rep>
+          </div>
+        </s_tag>
 
         <div class="pagination-row">
           <s_paging>

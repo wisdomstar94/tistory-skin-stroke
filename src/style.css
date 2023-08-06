@@ -441,14 +441,17 @@ ul.posts-list li.posts-index-item:nth-child(4n) {
 }
 ul.posts-list li.posts-index-item a.a-wrapper {
   width: 100%;
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
   position: relative;
   color: inherit;
   text-decoration: none;
 }
 ul.posts-list li.posts-index-item .image-row {
+  width: 100%;
   display: block;
-  height: 180px;
+  min-height: 180px;
+  aspect-ratio: 16 / 9;
   position: relative;
   border-bottom: 1px solid #000;
   background-image: url('./images/tistory_logo_image.png');
@@ -464,6 +467,7 @@ ul.posts-list li.posts-index-item .image-row img {
   object-fit: cover;
 } 
 ul.posts-list li.posts-index-item .info-row {
+  width: 100%;
   display: block;
   margin: 0;
   padding: 20px;
@@ -517,7 +521,8 @@ ul.posts-list li.posts-permalink-item .title-row {
   font-size: 36px;
   line-height: 42px;
 }
-ul.posts-list li.posts-permalink-item .tag-row {
+
+.tag-row {
   display: block;
   margin: 0;
   margin-bottom: 4px;
@@ -525,7 +530,7 @@ ul.posts-list li.posts-permalink-item .tag-row {
   position: relative;
   font-size: 0;
 }
-ul.posts-list li.posts-permalink-item .tag-row > a {
+.tag-row > a {
   display: inline-flex;
   flex-wrap: nowrap;
   white-space: nowrap;
@@ -540,9 +545,10 @@ ul.posts-list li.posts-permalink-item .tag-row > a {
   margin-bottom: 8px;
   padding: 4px 12px;
 }
-ul.posts-list li.posts-permalink-item .tag-row > a::before {
+.tag-row > a::before {
   content: '#';
 }
+
 ul.posts-list li.posts-permalink-item .time-row {
   display: block;
   margin: 0;
@@ -750,6 +756,17 @@ ol.comment-list li.comment-item .container .right-area .other-button-row a.other
   margin-bottom: 36px;
 }
 #tt-body-guestbook .guestbook-page-title-row {
+  display: block;
+}
+
+.tag-page-title-row {
+  display: none;
+  position: relative;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 36px;
+}
+#tt-body-tag .tag-page-title-row {
   display: block;
 }
 
