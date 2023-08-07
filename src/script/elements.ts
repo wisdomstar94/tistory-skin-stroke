@@ -85,3 +85,12 @@ export function getPostsIndexLiElement(text: string | null, index: number) {
   }
   return null;
 }
+
+export function getCodeElements() {
+  const elements: HTMLElement[] = [];
+  const targets = document.querySelectorAll(`.tt_article_useless_p_margin code`);
+  targets.forEach((element) => {
+    elements.push(element as HTMLElement);
+  });
+  return elements;
+}

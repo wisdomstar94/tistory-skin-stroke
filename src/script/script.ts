@@ -1,4 +1,4 @@
-import { getPostsHeadingTextElementItems, getPostsIndexLiElement, getPostsIndexLiElements, getPostsIndexUlListElement, getPostsTotalCountText, getSidebar, getSidebarBackground, getSidebarShowButton, getTopBar } from "./elements";
+import { getPostsHeadingTextElementItems, getPostsIndexLiElement, getPostsIndexLiElements, getPostsIndexUlListElement, getPostsTotalCountText, getSidebar, getSidebarBackground, getSidebarShowButton } from "./elements";
 import { getPostsHeadingTextElementsDisplayRange, getPostsTotalCount } from "./functions";
 
 console.log('tistory stroke skin javascript loaded!');
@@ -115,6 +115,4 @@ function int() {
   window.addEventListener('scroll', () => {
     postsIndexCheck();
   });
-
-  // getAnotherCategoryElement()?.classList.remove('another_category_color_gray');
 }
