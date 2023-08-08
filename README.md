@@ -13,3 +13,4 @@
 |<img src="./src/images/menu-2.svg" width="80" />|햄버거 메뉴 아이콘|https://tabler-icons.io/static/tabler-icons/icons/menu-2.svg|
 |<img src="./src/images/arrow-forward.svg" width="80" />|화살표 아이콘|https://tabler-icons.io/static/tabler-icons/icons/arrow-forward.svg|
 |<img src="./src/images/shield-lock.png" width="80" />|실드 아이콘|https://tabler-icons.io/static/tabler-icons/icons-png/shield-lock.png|
+|<img src="./src/images/settings.svg" width="80" />|설정 아이콘|https://tabler-icons.io/static/tabler-icons/icons/settings.svg|

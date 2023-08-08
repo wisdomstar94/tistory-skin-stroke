@@ -140,14 +140,46 @@ header.top-bar .container .right button.sidebar-show-button {
   display: block;
 }
 
-.side-bar .side-bar-content .blog-title-row {
+.side-bar .side-bar-content .side-bar-top-row {
   display: block;
+  margin-bottom: 40px;
+}
+.side-bar .side-bar-content .side-bar-top-row .blog-title-row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
   font-size: 20px;
   font-weight: bolder;
-  margin-bottom: 40px;
-}.side-bar .side-bar-content .blog-title-row > a {
+  text-align: left;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+.setting-button {
+  display: none;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.setting-button.show {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+.side-bar .side-bar-content .side-bar-top-row .admin-pannel-row {
+  display: none;
+  margin-top: 12px;
+}
+.side-bar .side-bar-content .side-bar-top-row .admin-pannel-row.show {
+  display: block;
+}
+.side-bar .side-bar-content .blog-title-row > a {
   color: inherit;
   text-decoration: none;
+  display: inline-flex;
+  flex-wrap: wrap;
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin-right: 8px;
 }
 .side-bar .side-bar-content .blog-title-row > a:hover {
   text-decoration: underline;
@@ -924,7 +956,7 @@ textarea.default-textarea:focus {
   outline-offset: 1px;
 }
 
-button.default-button {
+.default-button {
   display: inline-flex;
   flex-wrap: wrap;
   color: #fff;
@@ -935,6 +967,11 @@ button.default-button {
   border: 0;
   background-color: #000;
   cursor: pointer;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+.default-button.w-full {
+  width: 100%;
 }
 
 .custom-switch-button {
