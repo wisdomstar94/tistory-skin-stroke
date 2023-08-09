@@ -449,7 +449,7 @@ ul.posts-list {
   position: relative;
   align-items: stretch;
 }
-ul.posts-list li {
+ul.posts-list > li {
   display: block;
   margin: 0;
   padding: 0;
@@ -536,6 +536,8 @@ ul.posts-list li.posts-index-item .info-row .description-row {
   padding: 0;
   position: relative;
   font-size: 14px;
+  white-space: pre-line;
+  word-break: break-all;
 }
 
 ul.posts-list li.posts-permalink-item {
