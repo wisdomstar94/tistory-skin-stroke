@@ -538,6 +538,8 @@ ul.posts-list li.posts-index-item .info-row .description-row {
   font-size: 14px;
   white-space: pre-line;
   word-break: break-all;
+  overflow: hidden;
+  max-height: 120px;
 }
 
 ul.posts-list li.posts-permalink-item {
