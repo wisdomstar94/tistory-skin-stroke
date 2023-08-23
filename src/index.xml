@@ -74,4 +74,16 @@
     <!-- 콘텐츠영역 가로 사이즈, 이 사이즈에 맞춰 에디터의 위지윅이 제대로 구현된다. -->
     <contentWidth>500</contentWidth>
   </default>
+  <variables>
+    <variablegroup name="구글애드센스">
+      <variable>
+        <name>google-adsense-script-url</name>
+        <label>
+          <![CDATA[ 구글애드센스 script url ]]>
+        </label>
+        <description>구글애드센스 script url을 입력하세요.</description>
+        <type>STRING</type>
+      </variable>
+    </variablegroup>
+  </variables>
 </skin>
