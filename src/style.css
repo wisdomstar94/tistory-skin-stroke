@@ -772,6 +772,17 @@ ol.comment-list li.comment-item .container .right-area .other-button-row a.other
   text-decoration: underline;
 }
 
+.comment-list-empty {
+  width: 100%;
+  display: none;
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 12px;
+}
+.comment-list-empty.show {
+  display: block;
+}
+
 .section-title-row {
   display: block;
   margin: 0;

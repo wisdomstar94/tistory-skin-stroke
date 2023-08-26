@@ -479,6 +479,16 @@
                           </li>
                         </s_rp_rep>
                       </ol>
+                      <div class="comment-list-empty">
+                        등록된 댓글이 없습니다.
+                      </div>
+                      <script>
+                        (function(){
+                          if (document.querySelector(`.comment-row .comment-list`).childElementCount === 0) {
+                            document.querySelector(`.comment-row .comment-list-empty`)?.classList?.add('show');
+                          }
+                        })();
+                      </script>
                     </s_rp_container>
                     <s_rp_input_form>
                       <ul class="comment-write-form-list">
