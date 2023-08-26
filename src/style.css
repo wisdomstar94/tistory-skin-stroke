@@ -111,7 +111,7 @@ header.top-bar .container .right button.sidebar-show-button {
 }
 
 .side-bar {
-  width: 280px;
+  width: 320px;
   height: 100%;
   display: block;
   position: fixed;
@@ -143,6 +143,7 @@ header.top-bar .container .right button.sidebar-show-button {
 .side-bar .side-bar-content .side-bar-top-row {
   display: block;
   margin-bottom: 40px;
+  margin-top: 8px;
 }
 .side-bar .side-bar-content .side-bar-top-row .blog-title-row {
   width: 100%;
@@ -155,16 +156,32 @@ header.top-bar .container .right button.sidebar-show-button {
   justify-content: flex-start;
   position: relative;
 }
-.setting-button {
+
+.admin-icon-button-area {
   display: none;
+  flex-wrap: wrap;
   position: absolute;
   top: 8px;
   right: 8px;
 }
-.setting-button.show {
-  display: inline-flex;
-  flex-wrap: wrap;
+.admin-icon-button-area.show {
+  display: flex;
 }
+.admin-icon-button-area .setting-button {
+  display: inline-flex;
+  position: relative;
+  top: 8px;
+  right: 8px;
+  margin-left: 4px;
+}
+.admin-icon-button-area .write-button {
+  display: inline-flex;
+  position: relative;
+  top: 8px;
+  right: 8px;
+  margin-left: 4px;
+}
+
 .side-bar .side-bar-content .side-bar-top-row .admin-pannel-row {
   display: none;
   margin-top: 12px;
@@ -431,14 +448,14 @@ ul.recent-notice-list li.recent-notice-item > a:hover {
   display: block;
   position: relative;
   margin: 0;
-  margin-left: 280px;
+  margin-left: 320px;
   padding: 40px;
   box-sizing: border-box;
   transition: 0.3s all;
 }
 
 #tt-body-page .content-container { 
-  margin-right: 280px;
+  margin-right: 320px;
 }
 
 ul.posts-list {
@@ -810,7 +827,7 @@ ol.comment-list li.comment-item .container .right-area .other-button-row a.other
 }
 
 .posts-index-container {
-  width: 280px;
+  width: 320px;
   height: 100%;
   display: none;
   margin: 0;
@@ -850,11 +867,13 @@ ol.comment-list li.comment-item .container .right-area .other-button-row a.other
 .posts-index-container ul.list-row > li {
   display: block;
   margin: 0;
-  margin-bottom: 12px;
-  padding: 0;
+  /* margin-top: 12px;
+  margin-bottom: 12px; */
+  padding: 12px 0;
   position: relative;
   list-style-type: none;
   cursor: pointer;
+  border-bottom: 1px dotted #ccc;
 }
 .posts-index-container ul.list-row > li > span {
   opacity: 0.3;
@@ -867,12 +886,15 @@ ol.comment-list li.comment-item .container .right-area .other-button-row a.other
 }
 .posts-index-container ul.list-row > li.h2 {
   font-size: 24px;
+  line-height: 26px;
 }
 .posts-index-container ul.list-row > li.h3 {
   font-size: 20px;
+  line-height: 22px;
 }
 .posts-index-container ul.list-row > li.h4 {
   font-size: 16px;
+  line-height: 18px;
 }
 .posts-index-container ul.list-row > li.h5 {
   
@@ -1106,7 +1128,7 @@ textarea.default-textarea:focus {
 
   .side-bar {
     transition: 0.3s all;
-    left: -280px;
+    left: -320px;
     z-index: 3;
   }
   .side-bar.my-show {
@@ -1165,6 +1187,12 @@ textarea.default-textarea:focus {
   ol.comment-list.sub li.comment-item .container .right-area {
     width: calc(100% - 56px);
     padding-left: 54px;
+  }
+}
+
+@media all and (min-width: 0px) and (max-width: 360px) {
+  .side-bar {
+    width: calc(100% - 40px);
   }
 }
 
