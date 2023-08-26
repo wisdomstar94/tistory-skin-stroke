@@ -94,3 +94,9 @@ export function getCodeElements() {
   });
   return elements;
 }
+
+export function getPostsIndexItemLiElements() {
+  const lis: HTMLLIElement[] = [];
+  document.querySelectorAll<HTMLLIElement>('ul.posts-list li.posts-index-item').forEach(item => lis.push(item));
+  return lis;
+}

@@ -558,6 +558,54 @@ ul.posts-list li.posts-index-item .info-row .description-row {
   overflow: hidden;
   max-height: 120px;
 }
+ul.posts-list li.posts-index-item .overlay-info-area {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+}
+ul.posts-list li.posts-index-item .overlay-info-area .new-post-symbol {
+  width: 80px;
+  display: none;
+  position: relative;
+  background-color: #000;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+ul.posts-list li.posts-index-item .overlay-info-area .new-post-symbol.show {
+  display: inline-flex;
+}
+ul.posts-list li.posts-index-item .overlay-info-area .new-post-symbol .white-effect {
+  width: 8px;
+  height: 40px;
+  display: flex;
+  background-color: #fff;
+  transform: rotate(15deg);
+  animation: new-post-symbol-white-effect-animation 3000ms cubic-bezier(0.25, 1, 0.5, 1) 0ms infinite;
+  position: absolute;
+}
+ul.posts-list li.posts-index-item .overlay-info-area .new-post-symbol .text-area {
+  font-size: 14px;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 4px;
+}
+
+@keyframes new-post-symbol-white-effect-animation {
+  0% {
+    left: -50px;
+  }
+  48% {
+    left: 120px;
+  }
+  100% {
+    left: 120px;
+  }
+}
 
 ul.posts-list li.posts-permalink-item {
   width: 100%;
