@@ -39,3 +39,22 @@ export function getPostsHeadingTextElementsDisplayRange() {
   });
   return items;
 }
+
+export function getElementAbsoluteXY(element: HTMLElement | null) {
+	if (element === null) return undefined;
+	const rect = element.getBoundingClientRect();
+	const startY = rect.top + window.scrollY;
+	const startX = rect.left + window.scrollX;
+	const endY = startY + rect.height;
+	const endX = startX + rect.width;
+	return { 
+		start: {
+			x: startX,
+			y: startY,
+		},
+		end: {
+			x: endX,
+			y: endY,
+		},
+	};
+}

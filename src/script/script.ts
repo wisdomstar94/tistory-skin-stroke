@@ -1,5 +1,5 @@
 import { getPostsHeadingTextElementItems, getPostsIndexItemLiElements, getPostsIndexLiElement, getPostsIndexLiElements, getPostsIndexUlListElement, getPostsTotalCountText, getSidebar, getSidebarBackground, getSidebarShowButton } from "./elements";
-import { getPostsHeadingTextElementsDisplayRange, getPostsTotalCount } from "./functions";
+import { getElementAbsoluteXY, getPostsHeadingTextElementsDisplayRange, getPostsTotalCount } from "./functions";
 
 console.log('tistory stroke skin javascript loaded!');
 
@@ -124,4 +124,26 @@ function int() {
   window.addEventListener('scroll', () => {
     postsIndexCheck();
   });
+
+  function hashCheck() {
+    const hash = location.hash;
+    if (hash.startsWith(`#comment`)) {
+      const targetCommnetElement = document.querySelector<HTMLElement>(hash);
+      const positionInfo = getElementAbsoluteXY(targetCommnetElement);
+      if (positionInfo !== undefined) {
+        window.scrollTo({
+          top: positionInfo.start.y - 20,
+          behavior: 'smooth',
+        });
+      }
+    }
+  }
+
+  setTimeout(() => {
+    hashCheck();
+  }, 150);
+  
+  window.addEventListener("hashchange", () => {
+    hashCheck();
+  }); 
 }
