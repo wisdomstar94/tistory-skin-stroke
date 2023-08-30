@@ -1317,6 +1317,13 @@ textarea.default-textarea:focus {
   color: #fff;
 }
 
+.ad-row {
+  width: 100%;
+  display: block;
+  position: relative;
+  box-sizing: border-box; 
+}
+
 @media all and (min-width: 0px) and (max-width: 767px) {
   ul.posts-list li.posts-index-item {
     width: 100%;
